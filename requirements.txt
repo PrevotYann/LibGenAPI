@@ -1,4 +1,3 @@
 fastapi==0.79.0
 grab_convert_from_libgen==1.0.0
-grab_from_libgepytn==1.0.0
 uvicorn==0.18.2

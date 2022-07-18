@@ -5,14 +5,26 @@ from grab_from_libgen import LibgenSearch
 
 app = FastAPI()
 
-@app.get("/getresults")
-def getresults(title = None):
+@app.get("/title")
+def getfromtitles(title = None):
 
     if title is None:
         resultats = 'Enter a title!'
 
     else:
         res = LibgenSearch('fiction', q=title)
+        resultats = res.get_results()
+
+    return resultats
+
+@app.get("/author")
+def getfromtauthor(author = None):
+
+    if author is None:
+        resultats = 'Enter an author!'
+
+    else:
+        res = LibgenSearch('authors', q=author)
         resultats = res.get_results()
 
     return resultats

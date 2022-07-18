@@ -24,7 +24,7 @@ def getfromtauthor(author = None):
         resultats = 'Enter an author!'
 
     else:
-        res = LibgenSearch('authors', q=author)
+        res = LibgenSearch('fiction', q=author, criteria='authors')
         resultats = res.get_results()
 
     return resultats
